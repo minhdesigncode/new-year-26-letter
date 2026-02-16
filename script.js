@@ -60,16 +60,16 @@ function typeWriter(text, index) {
 }
 
 function downloadLetter() {
-    const letterContent = letterTemplate.replace('{NAME}', userName);
-    const blob = new Blob([letterContent], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `Thu_Gui_${userName}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    // Lưu lại tiêu đề trang cũ
+    const originalTitle = document.title;
+    // Đặt tên file khi in ra PDF
+    document.title = `Thu_Gui_${userName}`;
+    
+    // Lệnh in của trình duyệt (Người dùng chọn "Save as PDF")
+    window.print();
+    
+    // Trả lại tiêu đề cũ
+    document.title = originalTitle;
 }
 
 // Event listeners - QUAN TRỌNG: Đã đóng ngoặc đầy đủ tại đây
