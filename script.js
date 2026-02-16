@@ -2,7 +2,7 @@
 const validNames = ['midori', 'minh', 'min', 'hồng minh', 'em bé'];
 let userName = '';
 
-const letterTemplate = `Dear {NAME} thân iu, 
+const letterTemplate = `Mến gửi {NAME}, 
 
 Mấy nay ăn tết sao rồi ạ, khoẻ hông 😃
 
