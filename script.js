@@ -109,7 +109,7 @@ function downloadLetter() {
     // Lưu lại tiêu đề trang cũ
     const originalTitle = document.title;
     // Đặt tên file khi in ra PDF
-    document.title = `Thu_Gui_${userName}`;
+    document.title = `Thư gửi ${userName}`;
     
     // Lệnh in của trình duyệt (Người dùng chọn "Save as PDF")
     window.print();
