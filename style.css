@@ -68,6 +68,7 @@ body {
     gap: 20px;
 }
 
+
 .input-group {
     width: 100%;
     max-width: 400px;
@@ -79,6 +80,15 @@ body {
     flex-direction: column;
     width: 100%;
     padding-bottom: 40px; /* Khoảng cách cuối thư */
+}
+
+#section-2 .letter-footer {
+    display: none; /* Mặc định ẩn nút tải */
+}
+
+#section-2.active .letter-footer {
+    display: flex; /* Chỉ hiện khi Section 2 có class active */
+    justify-content: center;
 }
 
 .letter-header {
@@ -112,6 +122,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 
 /* INPUT & BUTTON */
 input {
@@ -164,7 +175,7 @@ button:hover {
 /* MOBILE */
 @media (max-width: 768px) {
     body { padding: 20px 10px; }
-    .container { border-radius: 15px; }
+    .container { border-radius: 16px; }
     .letter-header { padding: 50px 20px 10px; }
     .letter-scroll-area { padding: 10px 20px; }
     .letter-text { font-size: 16px; }
@@ -191,5 +202,15 @@ button:hover {
         box-shadow: none; border: none; 
     }
     /* Ẩn nút tải xuống khi đang in */
-    .letter-footer, #submitBtn { display: none; }
+    .letter-footer, #downloadBtn { display: none; }
+}
+
+/* Đảm bảo khi ẩn section thì mọi thứ bên trong biến mất hoàn toàn */
+#section-1, #section-2 {
+    display: none; /* Mặc định ẩn cả hai */
+}
+
+/* Chỉ hiện section nào được JS cấp quyền */
+#section-1.active, #section-2.active {
+    display: flex;
 }

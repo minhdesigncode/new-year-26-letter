@@ -36,13 +36,21 @@ function checkName() {
         input.classList.add('error');
     }
 }
-
 function showLetter() {
     const s1 = document.getElementById('section-1');
     const s2 = document.getElementById('section-2');
     
-    if(s1) s1.style.display = 'none';
-    if(s2) s2.style.display = 'block';
+    // Xóa active màn 1 và ẩn đi
+    if(s1) {
+        s1.classList.remove('active');
+        s1.style.display = 'none';
+    }
+    
+    // Thêm active màn 2 và hiện lên
+    if(s2) {
+        s2.classList.add('active');
+        s2.style.display = 'flex'; 
+    }
     
     const letterText = letterTemplate.replace('{NAME}', userName);
     typeWriter(letterText, 0);
