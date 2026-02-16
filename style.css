@@ -1,0 +1,203 @@
+:root {
+    --pink: #F075AE;
+    --yellow-dark: #F7DB91;
+    --yellow-light: #FFFDCE;
+    --green: #9BC264;
+    --paper: #fcf0dc;
+    --black: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAzL3JtNjE5MDEtYi1lbGVtZW50Z3JvdXAyLWJtLTAwMWEtYS5qcGc.jpg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER KIỂU POPUP */
+.container {
+    background: var(--paper);
+    max-width: 1000px;
+    width: 100%;
+    height: 800px;
+    max-height: 90vh; /* Chống tràn trên màn hình laptop nhỏ */
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border: 1px solid #e0d5c1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* TRANG TRÍ VIỀN TRÊN */
+.decorative-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--pink), var(--yellow-dark), var(--green), var(--pink));
+    background-size: 200% auto;
+    animation: gradientShift 3s linear infinite;
+    z-index: 10;
+}
+
+@keyframes gradientShift { to { background-position: 200% center; } }
+
+#section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    padding: 60px 40px;
+    height: 100%;
+    gap: 15px; /* Tạo khoảng cách đều giữa các thành phần */
+}
+
+#section-1 .heading {
+    margin-bottom: 5px; /* Giảm margin mặc định của heading */
+    font-size: 32px;
+}
+
+#submitBtn {
+    max-width: 240px; /* Nút bấm dài bằng input */
+    padding: 18px;
+    margin-top: 5px;
+}
+#section-2 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#section-1 {
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.letter-header {
+    padding: 50px 40px 10px;
+    flex-shrink: 0;
+}
+
+.heading {
+    font-family: 'Playwrite CU Guides', cursive;
+    color: var(--pink);
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+/* VÙNG CHỨA THƯ CÓ SCROLL */
+.letter-scroll-area {
+    flex-grow: 1;
+    overflow-y: auto !important; /* Cho phép cuộn */
+    padding: 10px 40px;
+    margin: 10px 5px;
+    scrollbar-width: thin; 
+    scrollbar-color: var(--pink) transparent;
+}
+
+.letter-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 2;
+    color: var(--black);
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.letter-footer {
+    padding: 10px 40px 40px;
+    flex-shrink: 0;
+}
+
+/* INPUT & BUTTON */
+input {
+    width: 100%;
+    padding: 18px 25px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin: 20px 0;
+}
+
+input:focus { border-color: var(--pink); }
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: none;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    background: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(240, 117, 174, 0.4);
+}
+
+.download-btn {
+    background: var(--green);
+}
+
+/* TÙY CHỈNH THANH CUỘN (SCROLLBAR) - ĐÃ FIX DẤU CHẤM */
+.letter-scroll-area::-webkit-scrollbar {
+    width: 8px;
+    display: block !important;
+}
+
+.letter-scroll-area::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.letter-scroll-area::-webkit-scrollbar-thumb {
+    background-color: var(--pink);
+    border-radius: 10px;
+    border: 2px solid var(--paper); /* Tạo viền bao quanh thanh cuộn cho nổi bật */
+}
+
+/* RESPONSIVE CHO MOBILE */
+@media (max-width: 768px) {
+    .container {
+        height: 85vh;
+        width: 95%;
+    }
+
+    .letter-header { padding: 40px 20px 5px; }
+    .heading { font-size: 22px; }
+    .letter-scroll-area { padding: 5px 20px; }
+    .letter-text { font-size: 16px; }
+    .letter-footer { padding: 5px 20px 25px; }
+}

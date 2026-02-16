@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư Chúc Tết Bạn Iu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playwrite+CU+Guides&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="decorative-top"></div>
+
+      <section id="section-1" class="active">
+        <h1 class="heading">Chúc mừng năm mới</h1>
+        <p style="text-align: center; margin-bottom: 20px">
+          Nhập tên để nhận thông điệp? :D
+        </p>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="nameInput"
+            placeholder="Nhập i..."
+            autocomplete="off"
+          />
+          <p id="error-msg" class="error-message">
+            Ơ i mean nhập tên “Midori” hoặc “Minh” hoặc “Min” ấy ạ :”>
+          </p>
+        </div>
+
+        <button id="submitBtn">Mở thư ngay 💌</button>
+      </section>
+
+      <section id="section-2" style="display: none">
+        <div class="letter-header">
+          <h1 class="heading">Thư gửi bạn...</h1>
+        </div>
+
+        <div class="letter-scroll-area">
+          <div id="letter-text" class="letter-text"></div>
+        </div>
+
+        <div class="letter-footer">
+          <button id="downloadBtn" class="download-btn">
+            Tải thư xuống máy ✨
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
