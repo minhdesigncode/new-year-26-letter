@@ -27,33 +27,31 @@ body {
     padding: 40px 20px; /* Thêm khoảng trống trên dưới */
 }
 
-/* CONTAINER - ĐÃ CHỈNH FULL HEIGHT */
 .container {
-    background: var(--paper);
-    max-width: 800px; /* Giảm nhẹ để nhìn thanh thoát hơn */
+    background-color: var(--paper);
+    /* Tạo hiệu ứng giấy nhàu bằng gradient và filter */
+    background-image: 
+        linear-gradient(135deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
+        linear-gradient(225deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
+        linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%), 
+        linear-gradient(315deg, rgba(0,0,0,0.02) 25%, transparent 25%);
+    background-size: 4px 4px;
+    
+    max-width: 800px;
     width: 100%;
-    min-height: 500px; /* Chiều cao tối thiểu */
-    /* Bỏ height cố định 800px để nó tự nở ra theo chữ */
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    min-height: 100vh;
     position: relative;
-    border: 1px solid #e0d5c1;
+    /* BỎ BO GÓC */
+    border-radius: 0; 
+    /* Đổ bóng kiểu giấy chồng lên nhau */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2), -2px -2px 10px rgba(255,255,255,0.5);
+    border: 1px solid #dcd1bd;
     display: flex;
     flex-direction: column;
-    overflow: visible; /* QUAN TRỌNG: Cho phép nội dung tràn ra để hiện scroll body */
+    overflow: visible;
 }
 
-/* VIỀN TRANG TRÍ */
-.decorative-top {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 8px;
-    background: linear-gradient(90deg, var(--pink), var(--yellow-dark), var(--green), var(--pink));
-    background-size: 200% auto;
-    animation: gradientShift 3s linear infinite;
-    border-radius: 20px 20px 0 0;
-    z-index: 10;
-}
+
 
 @keyframes gradientShift { to { background-position: 200% center; } }
 
@@ -109,9 +107,9 @@ body {
 }
 
 .letter-text {
-    font-family: 'Inter', sans-serif;
+    font-family: "inter", sans-serif;
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.5;
     color: var(--black);
     white-space: pre-wrap;
     text-align: left;
